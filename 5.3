@@ -1,0 +1,57 @@
+#include <stdio.h> 
+    
+int main() 
+{ 
+	int eka_luku, toka_luku, toiminto, tulos; 
+
+	printf("1: vähennyslasku \n");
+	printf("2: yhteenlasku \n");
+	printf("3: kertolasku\n");
+	
+	printf("Valitse toiminto:"); 
+	scanf("%d", &toiminto); 
+	
+	printf("Anna eka luku:"); 
+	scanf("%d", &eka_luku); 
+	
+	printf("Anna toka luku:"); 
+	scanf("%d", &toka_luku); 
+	
+	
+	switch(toiminto) { 
+	case 1: 
+		{ 
+			tulos = eka_luku - toka_luku;
+			break; 
+		} 
+	case 2: 
+		{  
+			tulos = eka_luku + toka_luku;
+			break; 
+		} 
+	case 3: 
+		{ 
+			tulos = eka_luku * toka_luku;
+			break; 
+		} 
+	default: 
+		printf("Antamasi syöte on arvoalueen ulkopuolella.\n"); 
+                break;
+	} 
+
+	if(toiminto == 1)
+	{
+		printf("%d-%d=%d",eka_luku, toka_luku, tulos);
+	}
+	
+	if(toiminto == 2)
+	{
+		printf("%d+%d=%d",eka_luku, toka_luku, tulos);
+	}
+	
+	if(toiminto == 3)
+	{
+		printf("%d*%d=%d",eka_luku, toka_luku, tulos);
+	}
+	return 0; 
+}
