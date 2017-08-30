@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+float laske_tunnit(float tunnit [], int kpl);
+float laske_keskiarvo(float tunnit [],int kpl);
+float tunnit_yht;
+int paivaa;
+float kpl;
+float keskiarvo;
+
+int main()
+
+	
+
+{	
+	int i;
+	printf("Ohjelma laskee yhteen haluamasi ajanjakson aikana\ntehdyt työtunnit sekä keskimääräisen työpäivän pituuden.\n\n");
+	
+	printf("Kuinka monta päivää:");
+	scanf("%d", &paivaa);
+	
+	float tunnit[paivaa];
+	
+	for (i=0; i<paivaa; i++)
+	{
+		printf("Anna %d. päivän työtunnit:", i+1);
+		scanf("%f", &tunnit[i]);	
+	}
+	laske_tunnit(tunnit, paivaa);
+	laske_keskiarvo(tunnit, paivaa);
+	
+	printf("\nTehdyt työtunnit yhteensä: %.1f\n",tunnit_yht);
+	printf("Keskimääräinen työpäivän pituus: %.1f\n",keskiarvo);
+	
+	printf("Syötetyt tunnit: ");
+	
+	for (i=0; i<paivaa; i++)
+	{
+		printf("%.1f ",tunnit[i]);
+	}
+}  
+float laske_tunnit(float tunnit[], int paivaa)
+{
+	int i;
+
+	for (i=0; i<paivaa; i++)
+	{
+		tunnit_yht=tunnit_yht+tunnit[i];
+	}
+	return tunnit_yht;
+}
+float laske_keskiarvo(float tunnit[], int paivaa)
+{
+	keskiarvo = tunnit_yht / paivaa;
+	return keskiarvo;
+}
+					
