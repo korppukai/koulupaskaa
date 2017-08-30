@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+int main() 
+{
+	char sukupuoli;
+	int ika;
+
+	printf("Oletko mies vai nainen (m/n)?");
+	sukupuoli = getchar();
+
+	printf("Anna ikäsi:");
+	scanf("%d", &ika);
+	
+	
+	if (sukupuoli == 'm' || sukupuoli == 'M')
+		{
+			if (ika <=55)
+			{
+				printf("Olet 0-55 vuotta ja mies.\n");
+			}
+		}
+		else if (sukupuoli == 'n' || sukupuoli == 'N')
+		{
+			if (ika <=55)
+			{	
+			printf("Olet 0-55 vuotta ja nainen.\n");
+			}
+		}
+		else
+		{
+			printf("Ohjelmassa on tapahtunut virhe!\n");
+		}
+	
+	if (sukupuoli == 'm' || sukupuoli == 'M')
+		{
+			if (ika >=56)
+			{
+				printf("Olet 56-100 vuotta ja mies.\n");
+			}
+		}
+		else if (sukupuoli == 'n' || sukupuoli == 'N')
+		{
+			if (ika >=56)
+			{	
+			printf("Olet 56-100 vuotta ja nainen.\n");
+			}
+		}
+		else
+		{
+			printf("Ohjelmassa on tapahtunut virhe!\n");
+		}
+	return 0;
+}
+
