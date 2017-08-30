@@ -1,0 +1,35 @@
+#include <stdio.h> 
+
+int main() 
+{ 
+	int arvosana, kappaleet, summa;
+	summa=0;
+	kappaleet=0;
+	float keskiarvo;	
+	
+	printf("Ohjelma laskee syötettyjen arvosanojen keskiarvon.\n");
+	printf("Lopetus negatiivisella kokonaisluvulla.\n");
+	
+	
+	do {  
+		printf("Anna arvosana (4-10):");  
+		scanf("%d", &arvosana);  
+ 		
+    
+		if(arvosana >= 0) 
+		{  
+			summa = summa + arvosana;
+			kappaleet++;
+		} 
+		else if(arvosana < 0) 
+		{  
+			keskiarvo=(float)summa/kappaleet;
+			printf("Ohjelmaan syötetty %d arvosanaa.\n",kappaleet);
+			printf("Arvosanojen keskiarvo: %.2f\n",keskiarvo);
+    	}  
+	} 
+	while(arvosana > 0);  
+
+	
+	return 0; 
+}
