@@ -1,0 +1,80 @@
+#include <stdio.h> 
+ 
+ 
+int laske_summa		(int summa);
+int laske_erotus	(int erotus);
+int laske_tulo		(int tulo);
+
+ int summa;
+ int erotus;
+ int tulo;
+
+ int vastaus;
+ 
+	int valinta;
+	int eka_luku;
+	int toka_luku;
+int main()     
+{
+
+	do
+{
+	printf("1:kahden luvun summa\n");
+	printf("2:kahden luvun erotus\n");
+	printf("3:kahden luvun tulo\n");
+	printf("<0: ohjelman lopetus\n");
+
+	printf("Valitse laskutoimitus:\n");
+	scanf("%d", &valinta);
+
+	if (valinta < 0)
+	{
+		printf("Ohjelma lopetetaan...");
+		return 0;
+	}				
+		
+	printf("Syötä ensimmäinen luku:\n");
+	scanf("%d", &eka_luku);	
+	
+	printf("Syötä toinen luku:\n");
+	scanf("%d", &toka_luku);
+
+	if (valinta < 0)
+	{
+		printf("Ohjelma lopetetaan...");
+	}
+	else if (valinta == 1)
+	{
+		vastaus = laske_summa(summa);
+		printf ("%d+%d=%d\n",eka_luku, toka_luku, vastaus);
+	}
+	else if (valinta == 2)
+	{
+		vastaus = laske_erotus(erotus);
+		printf ("%d-%d=%d\n",eka_luku, toka_luku, vastaus);
+	}
+	else if (valinta == 3)
+	{
+		vastaus = laske_tulo(tulo);
+		printf ("%d*%d=%d\n",eka_luku, toka_luku, vastaus);
+	}
+}while (valinta > 0);
+	return 0;
+}  
+
+
+int laske_summa(int summa)  
+{ 
+	summa = eka_luku + toka_luku;
+	return summa;
+}
+int laske_erotus(int erotus)  
+{ 
+	erotus = eka_luku - toka_luku;
+	return erotus;
+}
+int laske_tulo(int tulo)  
+{ 
+	tulo = eka_luku * toka_luku;
+	return tulo;
+}
