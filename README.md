@@ -1,2 +1,0 @@
-# koulupaskaa
-viope tehtäviä
